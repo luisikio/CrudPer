@@ -1,0 +1,43 @@
+﻿<h1>CUENTAS</h1>
+<a href="/account/create">Crear cuenta</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha nacimiento</th>
+            <th>Dni</th>
+            <th>Ciudad</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Genero</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @{ 
+            var accounts = ((List<account>)ViewBag.Accounts);
+        }
+
+        @for (var i = 0; i< accounts.Count; i++)
+        {
+            var item = accounts[i];
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Apellido</td>
+            <td>@item.FechaNac</td>
+            <td>@item.Dni</td>
+            <td>@item.Ciudad</td>
+            <td>@item.Direccion</td>
+            <td>@item.Correo</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            @*<td>@item.Genero</td>*@
+
+        </tr>
+        }
+    </tbody>
+</table>
